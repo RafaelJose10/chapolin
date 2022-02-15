@@ -69,7 +69,9 @@ function Inicio() {
     for (let C in vetor1) {
         for (let c in vetor1[C]) {
             vetor1[C][c].img.onclick = () => {
-                let aqui = vetor1[C][c].sprite;
+                let aqui = vetor1[C][c];
+                aqui.img.src = 'casa2.png';
+                // alert("Ola")
                 // if (aqui == 'arvore1(1).png') alert("Arvore Nao da Para seguir em frente");
                 // else aqui == 'grama verde.jpg' ? window.alert("que chao macio grama verdinha") : aqui == 'casa2.png' ? alert("que Casa Misteriosa porem bonita") : alert('barro');
             }
@@ -77,12 +79,13 @@ function Inicio() {
     }
     console.log(vetor1);
 
+
     var tela, t_left, t_top, t_width, t_height;
 
     var largura_tela, altura_tela;
     var tecla;
     var avatar, a_px, a_py, a_x, a_y, vel, movendo, sele, cena, coração, sprites;
-    a_px = 7, a_py = 7, a_x = 0, a_y = 0, vel = 2, cena = 1, movendo = false, sele = false;
+    a_px = 7, a_py = 7, a_x = 0, a_y = 0, vel = 5, cena = 1, movendo = false, sele = false;
 
     var esqu, up, dire, down;
     esqu = false, up = false, dire = false, down = false;
@@ -110,7 +113,7 @@ function Inicio() {
         tecla = Event.keyCode;
         if (tecla == 37 && a_px - 10) a_x = -vel, esqu = true, avatar.style.transform = 'scaleX(-1)';
         if (tecla == 38) a_y = -vel, up = true;
-        if (tecla == 39) a_x = vel, dire = true, avatar.style.transform = "scaleX(1)";;
+        if (tecla == 39) a_x = vel, dire = true, avatar.style.transform = "scaleX(1)";
         if (tecla == 40) a_y = vel, down = true;
 
         // if (tecla == 37 && a_px - 100 < 0) a_x = 0, esqu = false;
@@ -140,7 +143,6 @@ function Inicio() {
     function Avatar() {
         avatar.src = 'chapolin_' + (cena++) + '.png';
         if (cena == 9) cena = 1;
-
     }
 
     function motor() {
