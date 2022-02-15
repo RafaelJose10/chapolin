@@ -17,9 +17,9 @@ function Inicio() {
     }
 
 
-    for (let C = 0; C < 100; C++) {
+    for (let C = 0; C < 50; C++) {
         var vetor2 = new Array();
-        for (let c = 0; c < 1000; c++) {
+        for (let c = 0; c < 250; c++) {
             // vetor2.push(Math.round(Math.random() * 100));
 
             let laxy = 200;
